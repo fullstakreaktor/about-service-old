@@ -22,15 +22,15 @@ CREATE TABLE hosts (
   PRIMARY KEY (id)
 );
 
--- CREATE TABLE listings (
---   id INT NOT NULL AUTO_INCREMENT,
---   features varchar(500),
---   things_to_do varchar(500),
---   lat_location float,
---   lon_location float,
---   host_guidebook varchar(255),
---   PRIMARY KEY (id)
--- );
+CREATE TABLE listings (
+  id INT NOT NULL AUTO_INCREMENT,
+  features varchar(500),
+  things_to_do varchar(500),
+  lat_location float,
+  lon_location float,
+  host_guidebook varchar(255),
+  PRIMARY KEY (id)
+);
 
 CREATE TABLE reviews (
   id INT NOT NULL AUTO_INCREMENT,
