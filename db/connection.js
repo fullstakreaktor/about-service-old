@@ -15,10 +15,4 @@ connection.connect((err) => {
   }
 });
 
-<<<<<<< HEAD
 module.exports = connection;
-=======
-module.exports = {
-  connection,
-};
->>>>>>> sqlschema
