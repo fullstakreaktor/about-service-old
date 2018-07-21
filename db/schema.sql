@@ -11,23 +11,14 @@ CREATE TABLE hosts (
   state varchar(255)  NOT NULL,
   country varchar(255)  NOT NULL,
   joined_in_date DATE NOT NULL,
-<<<<<<< HEAD
   references_count int DEFAULT 0,
   verified boolean DEFAULT false,
-=======
-  reference int DEFAULT 0,
-  verified tinyint DEFAULT 0,
->>>>>>> sqlschema
   description varchar(1000) NOT NULL,
   response_rate FLOAT,
   response_time int,
   languages varchar(255),
   email varchar(255) NOT NULL,
-<<<<<<< HEAD
   photo_url varchar(255) NOT NULL,
-=======
-  photo varchar(255) NOT NULL,
->>>>>>> sqlschema
   PRIMARY KEY (id)
 );
 
