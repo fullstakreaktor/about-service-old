@@ -1,26 +1,19 @@
 const connection = require('./connection.js');
-
-const features = ['market', 'hiking', 'shopping mall', 'castro', 'snowboarding', 'dog park', 'historic'];
-
-const thingsToDo = ["Stores, coffee shops, restaurants, and pubs are great here.", "chinatown is a must go", "Windy Ocean beach", "welcome to foggy city"];
-
-const locations = [[-17.8336363, 48.4088007], [32.993182, 110.425983], [50.7480989, 20.2540479]];
-
-const hostGuidebooks = ['https://www.airbnb.com/things-to-do/rooms/2736358', 'https://www.airbnb.com/things-to-do/rooms/1345358', 'https://www.airbnb.com/things-to-do/rooms/1345663'];
+const mockData = require('./mockdata.js');
 
 const getRandomInt = (max) => {
-  return Math.floor(Math.random() * Math.floor(max));
+  return Math.floor(Math.random() * Math.floor(max))
 };
 
 
 const listingDataGenerator = () => {
   for (let i = 0; i < 100; i += 1) {
-    const featuresInt = getRandomInt(features.length);
-    const thingsToDoInt = getRandomInt(thingsToDo.length);
-    const locationLatLon = getRandomInt(locations.length);
-    const hostGuidebooksInt = getRandomInt(hostGuidebooks.length);
+    const featuresInt = getRandomInt(mockData.features.length);
+    const thingsToDoInt = getRandomInt(mockData.thingsToDo.length);
+    const locationLatLon = getRandomInt(mockData.locations.length);
+    const hostGuidebooksInt = getRandomInt(mockData.hostGuidebooks.length);
 
-    const theQuery = `INSERT INTO listings (features, things_to_do, lat_location, lon_location, host_guidebook) VALUES ('${features[featuresInt]}', '${thingsToDo[thingsToDoInt]}', ${locations[locationLatLon][0]}, ${locations[locationLatLon][1]}, '${hostGuidebooks[hostGuidebooksInt]}')`;
+    const theQuery = `INSERT INTO listings (features, things_to_do, lat_location, lon_location, host_guidebook) VALUES ('${mockData.features[featuresInt]}', '${mockData.thingsToDo[thingsToDoInt]}', ${mockData.locations[locationLatLon][0]}, ${mockData.locations[locationLatLon][1]}, '${mockData.hostGuidebooks[hostGuidebooksInt]}')`;
 
     connection.query(theQuery, (err, result) => {
       if (err) {
@@ -32,4 +25,30 @@ const listingDataGenerator = () => {
   }
 };
 
-listingDataGenerator();
+const hostsDataGenerator = () => {
+  for (let i = 0; i < 100; i += 1) {
+    const firstNameInt = getRandomInt(mockData.firstNames.length);
+    const lastNameInt = getRandomInt(mockData.lastNames.length);
+    const citiesInt = getRandomInt(mockData.cities.length);
+    const statesInt = getRandomInt(mockData.states.length);
+    const countriesInt = getRandomInt(mockData.countries.length);
+    const joinedInDateInt = getRandomInt(mockData.joinInDates.length);
+    const descriptionInt = getRandomInt(mockData.descriptions.length);
+    const emailInt = getRandomInt(mockData.emails.length);
+    const urlsInt = getRandomInt(mockData.urls.length);
+
+    const theQuery = `INSERT INTO hosts (first_name, last_name, city, state, country, joined_in_date, description, email, photo_url) VALUES ('${mockData.firstNames[firstNameInt]}', '${mockData.lastNames[lastNameInt]}', '${mockData.cities[citiesInt]}', '${mockData.states[statesInt]}', '${mockData.countries[countriesInt]}', '${mockData.joinInDates[joinedInDateInt]}', '${mockData.descriptions[descriptionInt]}', '${mockData.emails[emailInt]}', '${mockData.urls[urlsInt]}')`;
+
+    connection.query(theQuery, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('inserted hosts data');
+      }
+    });
+  }
+};
+
+
+// listingDataGenerator();
+hostsDataGenerator();
