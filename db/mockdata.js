@@ -6,7 +6,7 @@ const locations = [[-17.8336363, 48.4088007], [32.993182, 110.425983], [50.74809
 
 const hostGuidebooks = ['https://www.airbnb.com/things-to-do/rooms/2736358', 'https://www.airbnb.com/things-to-do/rooms/1345358', 'https://www.airbnb.com/things-to-do/rooms/1345663'];
 
-const firstNames = ['John', 'Sam', 'Bentley', 'Nova', 'Lily', 'Tofu', 'Snow']
+const firstNames = ['John', 'Sam', 'Bentley', 'Nova', 'Lily', 'Tofu', 'Snow'];
 
 const lastNames = ['Cho', 'Pham', 'Johnson', 'Smith'];
 
@@ -23,7 +23,7 @@ const descriptions = ['Morbi non lectus. Aliquam sit amet diam in magna bibendum
 
 const emails = ['dlippitt0@chicagotribune.com', 'dcharlwood1@icio.us', 'lboichat2@tinyurl.com', 'nbuckle3@gov.uk', 'gtestro4@unblog.fr', 'gwapples5@ameblo.jp', 'jgallichiccio6@howstuffworks.com', 'vvasyushkhin7@squidoo.com', 'ameggison8@xrea.com', 'aglentz9@yolasite.com'];
 
-const urls = ['www.photobooth.com/url1']
+const urls = ['www.photobooth.com/url1'];
 
 module.exports = {
   features, thingsToDo, locations, hostGuidebooks, firstNames, lastNames, cities, states, countries, joinInDates, descriptions, emails, urls,

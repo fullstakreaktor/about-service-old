@@ -49,6 +49,25 @@ const hostsDataGenerator = () => {
   }
 };
 
+const reviewsDataGenerator = (users, lists) => {
+  for (let i = 0; i < 100; i += 1) {
+    const userIdInt = getRandomInt(users) + 1;
+    const listIdInt = getRandomInt(lists) + 1;
+    const ratingInt = getRandomInt(5);
+
+    const theQuery = `INSERT into reviews (user_id, list_id, rating) VALUES (${userIdInt}, ${listIdInt}, ${ratingInt})`;
+
+    connection.query(theQuery, (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('inserted reviews data');
+      }
+    });
+  }
+};
+
 
 // listingDataGenerator();
-hostsDataGenerator();
+// hostsDataGenerator();
+reviewsDataGenerator(100, 100);
