@@ -4,9 +4,9 @@ const selectHostInfo = (callback) => {
   const theQuery = 'select * from hosts where id = 1';
   connection.query(theQuery, (err, result) => {
     if (err) {
-      callbaack(err);
+      callback(err);
     } else {
-      callback(null, JSON.stringify(result));
+      callback(null, result);
     }
   });
 };
