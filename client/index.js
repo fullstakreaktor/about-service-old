@@ -1,3 +1,5 @@
-import CountDown from './components/countdown.jsx';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
 
-window.CountDown = CountDown;
+ReactDOM.render(<App/>,document.getElementById('app'));

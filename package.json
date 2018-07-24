@@ -5,7 +5,7 @@
   "main": "bundle.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack",
+    "build": "webpack -d --watch ",
     "start": "nodemon ./server/server.js"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.2",
+    "jquery": "^3.3.1",
     "morgan": "^1.9.0",
     "mysql": "^2.16.0",
     "react": "^16.2.0",

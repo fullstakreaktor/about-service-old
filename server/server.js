@@ -2,17 +2,25 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 // need to create a file to select data
-// const db = require('../db/')
+const db = require('../db/queries.js');
 
 const app = express();
 
 // to parse our data and use req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/', (req, res) => {
-  res.send('hello world');
+app.get('/hosts', (req, res) => {
+  db.selectHostInfo((err, result) => {
+  //  console.log('heeeeeelo', arguments);
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(JSON.stringify(result));
+      res.send(JSON.stringify(result));
+    }
+  });
 });
 
 app.listen(3001, () => {
