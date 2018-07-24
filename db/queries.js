@@ -1,12 +1,12 @@
 const connection = require('./connection.js');
 
-const selectHostInfo = () => {
+const selectHostInfo = (callback) => {
   const theQuery = 'select * from hosts where id = 1';
   connection.query(theQuery, (err, result) => {
     if (err) {
-      console.log(err);
+      callbaack(err);
     } else {
-      console.log(JSON.stringify(result));
+      callback(null, JSON.stringify(result));
     }
   });
 };
@@ -15,4 +15,4 @@ module.exports = {
   selectHostInfo,
 };
 
-selectHostInfo();
+// selectHostInfo();
