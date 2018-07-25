@@ -18,7 +18,7 @@ class App extends React.Component {
     "July", "August", "September", "October", "November", "December"];
 
     $.get('/hosts', (data) => {
-      this.setState({ host: data[0] });
+      this.setState({ host: JSON.parse(data)[0] });
       this.setState({joinMonth: monthNames[Number(this.state.host.joined_in_date.split('-')[1]) - 1] });
       this.setState({joinYear: this.state.host.joined_in_date.split('-')[0]});
     });
