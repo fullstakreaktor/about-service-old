@@ -21,7 +21,6 @@ class App extends React.Component {
     return (
       <div>
         <span>Hosted By {this.state.host.first_name}</span>
-        <span> {this.state.host.last_name}</span>
       </div>
     );
   }
