@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
+// import CSSModules from 'react-css-modules';
 // import styles from './styles.css';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -38,3 +40,4 @@ class App extends React.Component {
 }
 
 module.exports = App;
+// export default CSSModules(App, styles);
