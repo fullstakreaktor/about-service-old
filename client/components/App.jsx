@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import HostInfo from './HostInfo.jsx';
 // import CSSModules from 'react-css-modules';
 // import styles from './styles.css';
 
@@ -30,10 +31,7 @@ class App extends React.Component {
     return (
       <div>
         <span className='title'>Hosted By {this.state.host.first_name}</span>
-        <div>
-          <span>{this.state.host.city}, {this.state.host.state}, {this.state.host.country} · Joined in {this.state.joinMonth}, {this.state.joinYear}
-          </span>
-        </div>
+        <HostInfo host={this.state.host} joinMonth={this.state.joinMonth} joinYear={this.state.joinYear} />
       </div>
     );
   }
