@@ -6,9 +6,11 @@ body {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: auto;
+  margin: 0.5em;
 }
 
 .infoBox {
   flex-grow: 1;
   background-color: orange;
+  margin: 0.5em;
 }

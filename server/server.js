@@ -17,7 +17,16 @@ app.get('/hosts', (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(JSON.stringify(result));
+      res.send(JSON.stringify(result));
+    }
+  });
+});
+
+app.get('/reviews', (req, res) => {
+  db.reviewsForHost((err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
       res.send(JSON.stringify(result));
     }
   });
