@@ -16,6 +16,8 @@ class App extends React.Component {
       numsOfReviews: 0,
       reviewWording: 'reviews',
     };
+
+    this.verifiedOrNot = this.verifiedOrNot.bind(this);
   }
 
   componentWillMount() {
@@ -37,7 +39,6 @@ class App extends React.Component {
   getReviewInfo() {
     $.get('/reviews', (data) => {
       this.setState({ numsOfReviews: data });
-      console.log("this is the state", this.state.numsOfReviews)
     });
   }
 
@@ -47,11 +48,17 @@ class App extends React.Component {
     }
   }
 
+  verifiedOrNot() {
+    if (this.state.host.verified === 1) {
+      return <span>Verified</span>
+    }
+  }
+
   render() {
     return (
       <div>
         <span className='title'>Hosted By {this.state.host.first_name}</span>
-        <HostInfo host={this.state.host} joinMonth={this.state.joinMonth} joinYear={this.state.joinYear} reviews={this.state.numsOfReviews} reviewWording={this.state.reviewWording} />
+        <HostInfo host={this.state.host} joinMonth={this.state.joinMonth} joinYear={this.state.joinYear} reviews={this.state.numsOfReviews} reviewWording={this.state.reviewWording} verifiedOrNot={this.verifiedOrNot}/>
       </div>
     );
   }

@@ -8,6 +8,7 @@ const HostInfo = (props) => {
       </p>
       <p>
         <span>{props.reviews} {props.reviewWording} </span>
+        {props.verifiedOrNot()}
       </p>
     </div>
   )
