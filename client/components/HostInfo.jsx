@@ -1,9 +1,12 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './styles.css';
+
 
 const HostInfo = (props) => {
   console.log(props);
   return (
-    <div className="infoBox">
+    <div styleName="infoBox">
       <p>{props.host.city}, {props.host.state}, {props.host.country} · Joined in {props.joinMonth}, {props.joinYear}
       </p>
       <p>
@@ -14,4 +17,4 @@ const HostInfo = (props) => {
   );
 };
 
-module.exports = HostInfo;
+export default CSSModules(HostInfo, styles);

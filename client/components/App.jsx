@@ -3,8 +3,8 @@ import $ from 'jquery';
 import HostInfo from './HostInfo.jsx';
 import HostDescription from './HostDescription.jsx';
 
-// import CSSModules from 'react-css-modules';
-// import styles from './styles.css';
+import CSSModules from 'react-css-modules';
+import styles from './styles.css';
 
 
 class App extends React.Component {
@@ -66,7 +66,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <span className='title'>Hosted By {this.state.host.first_name}</span>
+        <span styleName='title'>Hosted By {this.state.host.first_name}</span>
         <HostInfo host={this.state.host} joinMonth={this.state.joinMonth} joinYear={this.state.joinYear} reviews={this.state.numsOfReviews} reviewWording={this.state.reviewWording} verifiedOrNot={this.verifiedOrNot}/>
         <HostDescription host={this.state.host} responseTimeConvertor={this.responseTimeConvertor}/>
       </div>
@@ -74,5 +74,5 @@ class App extends React.Component {
   }
 }
 
-module.exports = App;
-// export default CSSModules(App, styles);
+// module.exports = App;
+export default CSSModules(App, styles);

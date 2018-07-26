@@ -4,25 +4,25 @@ body {
   font-size: 1em;
 }
 
-.-styles-title-1uuHzZ- {
+.title {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: auto;
   margin: 0.5em;
 }
 
-.-styles-infoBox-Qxj6XE- {
+.infoBox {
   /* flex-grow: 1; */
   /* background-color: orange; */
   margin: 0.5em;
   border-bottom: 0.1px solid #DBDBDB;
 }
 
-.-styles-boldingWords-6WVXiF- {
+.boldingWords {
   font-weight: bold;
 }
 
-.-styles-button-1_vR1a- {
+.button {
   border-color: #008489;
   color:#008489;
   border-radius: 4px;

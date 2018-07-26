@@ -1,15 +1,18 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './styles.css';
+
 
 const HostDescription = (props) => {
   return(
-    <div className="infoBox">
+    <div styleName="infoBox">
       <p>{props.host.description}</p>
-      <p>Languages: <span className='boldingWords'>{props.host.languages}</span></p>
-      <p>Response Rate: <span className='boldingWords'>{props.host.response_rate * 100}%</span></p>
+      <p>Languages: <span styleName='boldingWords'>{props.host.languages}</span></p>
+      <p>Response Rate: <span styleName='boldingWords'>{props.host.response_rate * 100}%</span></p>
       <p>Response Time: {props.responseTimeConvertor()}</p>
-      <p><button className="button">Contact Host</button></p>
+      <p><button styleName="button">Contact Host</button></p>
     </div>
   );
 };
 
-module.exports = HostDescription;
+export default CSSModules(HostDescription, styles);
