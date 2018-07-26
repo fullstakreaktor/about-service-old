@@ -1,6 +1,7 @@
 body {
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   color: #484848;
+  font-size: 1em;
 }
 
 .title {
@@ -15,4 +16,22 @@ body {
   /* background-color: orange; */
   margin: 0.5em;
   border-bottom: 0.1px solid #DBDBDB;
+}
+
+.boldingWords {
+  font-weight: bold;
+}
+
+.button {
+  border-color: #008489;
+  color:#008489;
+  border-radius: 4px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  border-width: 1px !important;
+  padding-left: 16px !important;
+padding-right: 16px !important;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 import HostInfo from './HostInfo.jsx';
+import HostDescription from './HostDescription.jsx';
+
 // import CSSModules from 'react-css-modules';
 // import styles from './styles.css';
 
@@ -18,6 +20,7 @@ class App extends React.Component {
     };
 
     this.verifiedOrNot = this.verifiedOrNot.bind(this);
+    this.responseTimeConvertor = this.responseTimeConvertor.bind(this);
   }
 
   componentWillMount() {
@@ -54,11 +57,18 @@ class App extends React.Component {
     }
   }
 
+  responseTimeConvertor() {
+    if (this.state.host.response_time <= 59) {
+      return <span className="boldingWords">Within an hour</span>
+    }
+  }
+
   render() {
     return (
       <div>
         <span className='title'>Hosted By {this.state.host.first_name}</span>
         <HostInfo host={this.state.host} joinMonth={this.state.joinMonth} joinYear={this.state.joinYear} reviews={this.state.numsOfReviews} reviewWording={this.state.reviewWording} verifiedOrNot={this.verifiedOrNot}/>
+        <HostDescription host={this.state.host} responseTimeConvertor={this.responseTimeConvertor}/>
       </div>
     );
   }

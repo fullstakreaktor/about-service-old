@@ -11,7 +11,7 @@ const HostInfo = (props) => {
         {props.verifiedOrNot()}
       </p>
     </div>
-  )
-}
+  );
+};
 
 module.exports = HostInfo;
