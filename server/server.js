@@ -11,8 +11,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/hosts', (req, res) => {
-  db.selectHostInfo((err, result) => {
+app.get('/hosts/:id', (req, res) => {
+  console.log(req.params);
+  db.selectHostInfo(+req.params.id, (err, result) => {
   //  console.log('heeeeeelo', arguments);
     if (err) {
       console.log(err);

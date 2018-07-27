@@ -12,6 +12,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      id: +props.id,
       host: {},
       joinMonth: '',
       joinYear: '',
@@ -32,7 +33,7 @@ class App extends React.Component {
   getHostInfo() {
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    $.get('/hosts', (data) => {
+    $.get(`/hosts/${this.state.id}`, (data) => {
       this.setState({ host: JSON.parse(data)[0] });
       this.setState({ joinMonth: monthNames[Number(this.state.host.joined_in_date.split('-')[1]) - 1] });
       this.setState({ joinYear: this.state.host.joined_in_date.split('-')[0] });

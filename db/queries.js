@@ -1,7 +1,7 @@
 const connection = require('./connection.js');
 
-const selectHostInfo = (callback) => {
-  const theQuery = 'select * from hosts where id = 86';
+const selectHostInfo = (id, callback) => {
+  const theQuery = `select * from hosts where id = ${id}`;
   connection.query(theQuery, (err, result) => {
     if (err) {
       callback(err);
