@@ -1,8 +1,8 @@
-.-hostInfo-boldingWords-2vibiq- {
+.boldingWords {
   font-weight: bold;
 }
 
-.-hostInfo-button-2QCZmL- {
+.button {
   border-color: #008489;
   color:#008489;
   border-radius: 4px;
@@ -16,21 +16,21 @@
 padding-right: 16px !important;
 }
 
-.-hostInfo-infoBox-3c7Wde- {
+.infoBox {
   /* flex-grow: 1; */
   /* background-color: orange; */
   margin: 0.5em;
   border-bottom: 0.1px solid #DBDBDB;
 }
 
-.-hostInfo-pawImg-2hbptl- {
+.pawImg {
   height: 14px;
   width: 14px;
   transform: rotate(360deg);
   margin-right: 5px;
 }
 
-.-hostInfo-verifiedImg-3RYIj8- {
+.verifiedImg {
   height: 18px;
   width: 18px;
   transform: rotate(360deg);
@@ -38,28 +38,8 @@ padding-right: 16px !important;
   margin-left: 5px;
 }
 
-.-hostInfo-reviewRow-3vRBZW- {
+.reviewRow {
   /* background-color: orange; */
   display: flex;
   flex-wrap: wrap;
-}
-body {
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
-  color: #484848;
-  font-size: 1em;
-}
-
-.-styles-title-ndnh2D- {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: auto;
-  margin: 0.5em;
-}
-
-img {
-    border-radius: 50%;
-    height: 64px;
-    width: 64px;
-    float: right;
-    transform: rotate(90deg);
 }

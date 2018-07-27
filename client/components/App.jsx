@@ -2,9 +2,10 @@ import React from 'react';
 import $ from 'jquery';
 import HostInfo from './HostInfo.jsx';
 import HostDescription from './HostDescription.jsx';
+import ContactAirbnb from './AlwaysContactAbnb.jsx';
 
 import CSSModules from 'react-css-modules';
-import styles from './styles.css';
+import styles from './css/styles.css';
 
 
 class App extends React.Component {
@@ -67,8 +68,11 @@ class App extends React.Component {
     return (
       <div>
         <span styleName='title'>Hosted By {this.state.host.first_name}</span>
+        <span><img src={`https://s3-us-west-1.amazonaws.com/dog-photos-bentley/${this.state.host.id}.jpeg`}/></span>
         <HostInfo host={this.state.host} joinMonth={this.state.joinMonth} joinYear={this.state.joinYear} reviews={this.state.numsOfReviews} reviewWording={this.state.reviewWording} verifiedOrNot={this.verifiedOrNot}/>
-        <HostDescription host={this.state.host} responseTimeConvertor={this.responseTimeConvertor}/>
+
+        <HostDescription host={this.state.host} responseTimeConvertor={this.responseTimeConvertor} />
+        <ContactAirbnb />
       </div>
     );
   }
