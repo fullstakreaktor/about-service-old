@@ -4,7 +4,6 @@ import styles from './css/hostInfo.css';
 
 
 const HostInfo = (props) => {
-  console.log(props);
   return (
     <div styleName="infoBox">
       <p>{props.host.city}, {props.host.state}, {props.host.country} · Joined in {props.joinMonth}, {props.joinYear}
