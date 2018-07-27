@@ -3,7 +3,6 @@ import $ from 'jquery';
 import HostInfo from './HostInfo.jsx';
 import HostDescription from './HostDescription.jsx';
 import ContactAirbnb from './AlwaysContactAbnb.jsx';
-
 import CSSModules from 'react-css-modules';
 import styles from './css/styles.css';
 
