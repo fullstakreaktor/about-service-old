@@ -10,7 +10,7 @@ body {
   margin-left: 0.5em;
 }
 
-img {
+.hostImg {
     border-radius: 50%;
     height: 64px;
     width: 64px;

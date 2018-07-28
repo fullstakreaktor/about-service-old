@@ -4,9 +4,9 @@ import styles from './css/map.css';
 import GoogleMapReact from 'google-map-react';
 
 const GoogleMap = (props) => {
-
+console.log(props)
 return(
-  <div style={{ height: '350px', width: '350px'}}>
+  <div style={{ height: '320px', width: '540px'}}>
   <GoogleMapReact
     bootstrapURLKeys={{ key: props.apiKey} }
     defaultCenter={props.location}
