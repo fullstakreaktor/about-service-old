@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/hosts/:id', (req, res) => {
-  console.log(req.params);
+  // console.log(req.params);
   db.selectHostInfo(+req.params.id, (err, result) => {
   //  console.log('heeeeeelo', arguments);
     if (err) {
@@ -23,8 +23,19 @@ app.get('/hosts/:id', (req, res) => {
   });
 });
 
-app.get('/reviews', (req, res) => {
-  db.reviewsForHost((err, result) => {
+app.get('/reviews/:listingId', (req, res) => {
+  console.log(req.params);
+  db.reviewsForHost(+req.params.listingId, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(JSON.stringify(result));
+    }
+  });
+});
+
+app.get('/neighborhood/:listingId', (req, res) => {
+  db.neighborhoodInfo(+req.params.listingId, (err, result) => {
     if (err) {
       console.log(err);
     } else {
