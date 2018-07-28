@@ -81,7 +81,7 @@ class App extends React.Component {
     return (
       <div>
         <span styleName='title'>Hosted By {this.state.host.first_name}</span>
-        <span><img src={`https://s3-us-west-1.amazonaws.com/dog-photos-bentley/${this.state.host.id}.jpeg`}/></span>
+        <span><img styleName='hostImg' src={`https://s3-us-west-1.amazonaws.com/dog-photos-bentley/${this.state.host.id}.jpeg`}/></span>
         <HostInfo host={this.state.host} joinMonth={this.state.joinMonth} joinYear={this.state.joinYear} reviews={this.state.numsOfReviews} reviewWording={this.state.reviewWording} verifiedOrNot={this.verifiedOrNot}/>
 
         <HostDescription host={this.state.host} responseTimeConvertor={this.responseTimeConvertor} />
