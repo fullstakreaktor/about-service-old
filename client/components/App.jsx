@@ -3,9 +3,9 @@ import $ from 'jquery';
 import HostInfo from './HostInfo.jsx';
 import HostDescription from './HostDescription.jsx';
 import ContactAirbnb from './AlwaysContactAbnb.jsx';
+import Neighborhood from './Neighborhood.jsx';
 import CSSModules from 'react-css-modules';
 import styles from './css/styles.css';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -13,11 +13,13 @@ class App extends React.Component {
 
     this.state = {
       id: +props.id,
+      listingId: +props.listingId,
       host: {},
       joinMonth: '',
       joinYear: '',
       numsOfReviews: 0,
       reviewWording: 'reviews',
+      neighborhoodInfo: {},
     };
 
     this.verifiedOrNot = this.verifiedOrNot.bind(this);
@@ -28,6 +30,7 @@ class App extends React.Component {
     this.getHostInfo();
     this.getReviewInfo();
     this.reviewOrReviews();
+    this.getNeighborhoodInfo();
   }
 
   getHostInfo() {
@@ -41,8 +44,14 @@ class App extends React.Component {
   }
 
   getReviewInfo() {
-    $.get('/reviews', (data) => {
+    $.get(`/reviews/${this.state.id}`, (data) => {
       this.setState({ numsOfReviews: data });
+    });
+  }
+
+  getNeighborhoodInfo() {
+    $.get(`/neighborhood/${this.state.listingId}`, (data) => {
+      this.setState({ neighborhoodInfo: JSON.parse(data)[0] });
     });
   }
 
@@ -73,6 +82,7 @@ class App extends React.Component {
 
         <HostDescription host={this.state.host} responseTimeConvertor={this.responseTimeConvertor} />
         <ContactAirbnb />
+        <Neighborhood neighborhoodInfo={this.state.neighborhoodInfo} />
       </div>
     );
   }
