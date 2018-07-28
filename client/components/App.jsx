@@ -4,12 +4,15 @@ import HostInfo from './HostInfo.jsx';
 import HostDescription from './HostDescription.jsx';
 import ContactAirbnb from './AlwaysContactAbnb.jsx';
 import Neighborhood from './Neighborhood.jsx';
+import GoogleMap from './Map.jsx';
 import CSSModules from 'react-css-modules';
 import styles from './css/styles.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    console.log(props.API_KEY)
 
     this.state = {
       id: +props.id,
@@ -20,6 +23,7 @@ class App extends React.Component {
       numsOfReviews: 0,
       reviewWording: 'reviews',
       neighborhoodInfo: {},
+      apiKey: props.API_KEY,
     };
 
     this.verifiedOrNot = this.verifiedOrNot.bind(this);
@@ -82,7 +86,7 @@ class App extends React.Component {
 
         <HostDescription host={this.state.host} responseTimeConvertor={this.responseTimeConvertor} />
         <ContactAirbnb />
-        <Neighborhood neighborhoodInfo={this.state.neighborhoodInfo} />
+        <Neighborhood neighborhoodInfo={this.state.neighborhoodInfo} lat={this.state.neighborhoodInfo.lat_location}lng={this.state.neighborhoodInfo.lon_location} zoom='11' apiKey={this.state.apiKey}/>
       </div>
     );
   }
