@@ -30,7 +30,7 @@ class App extends React.Component {
     this.responseTimeConvertor = this.responseTimeConvertor.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getHostInfo();
     this.getReviewInfo();
     this.reviewOrReviews();
