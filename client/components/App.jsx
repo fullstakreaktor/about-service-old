@@ -12,8 +12,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(props.API_KEY)
-
     this.state = {
       id: +props.id,
       listingId: +props.listingId,
@@ -49,6 +47,7 @@ class App extends React.Component {
 
   getReviewInfo() {
     $.get(`/reviews/${this.state.id}`, (data) => {
+      console.log('review', data)
       this.setState({ numsOfReviews: data });
     });
   }

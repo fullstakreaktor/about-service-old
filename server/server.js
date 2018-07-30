@@ -14,7 +14,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get('/hosts/:id', (req, res) => {
   // console.log(req.params);
   db.selectHostInfo(+req.params.id, (err, result) => {
-  //  console.log('heeeeeelo', arguments);
     if (err) {
       console.log(err);
     } else {
@@ -24,7 +23,6 @@ app.get('/hosts/:id', (req, res) => {
 });
 
 app.get('/reviews/:listingId', (req, res) => {
-  console.log(req.params);
   db.reviewsForHost(+req.params.listingId, (err, result) => {
     if (err) {
       console.log(err);
@@ -44,11 +42,7 @@ app.get('/neighborhood/:listingId', (req, res) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log('Server started on 3001');
-});
-
-
+module.exports = app;
 // const express = require('express');
 // const morgan = require('morgan');
 // const path = require('path');
