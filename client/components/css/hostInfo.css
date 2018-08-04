@@ -32,14 +32,12 @@ a {
 .pawImg {
   height: 14px;
   width: 14px;
-  transform: rotate(360deg);
   margin-right: 5px;
 }
 
 .verifiedImg {
   height: 18px;
   width: 18px;
-  transform: rotate(360deg);
   margin-right: 5px;
   margin-left: 5px;
 }

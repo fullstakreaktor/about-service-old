@@ -68,6 +68,6 @@ const reviewsDataGenerator = (users, lists) => {
 };
 
 
-// listingDataGenerator();
-// hostsDataGenerator();
+listingDataGenerator();
+hostsDataGenerator();
 reviewsDataGenerator(100, 100);
